@@ -1390,6 +1390,7 @@ CSP_IMG_SRC = CSP_DEFAULT_SRC + [
     'adservice.google.de',
     'adservice.google.dk',
     'creativecommons.org',
+    'https://optimize.google.com',
 ]
 CSP_SCRIPT_SRC = CSP_DEFAULT_SRC + [
     # TODO fix things so that we don't need this
@@ -1402,10 +1403,13 @@ CSP_SCRIPT_SRC = CSP_DEFAULT_SRC + [
     'tagmanager.google.com',
     'www.youtube.com',
     's.ytimg.com',
+    'https://optimize.google.com',
 ]
 CSP_STYLE_SRC = CSP_DEFAULT_SRC + [
     # TODO fix things so that we don't need this
     "'unsafe-inline'",
+    'https://optimize.google.com',
+    'https://fonts.googleapis.com',
 ]
 CSP_CHILD_SRC = [
     'www.googletagmanager.com',
@@ -1423,6 +1427,9 @@ CSP_CONNECT_SRC = CSP_DEFAULT_SRC + [
     FXA_ENDPOINT,
     FXA_ENDPOINT_MOZILLAONLINE,
 ]
+CSP_FONT_SRC = [
+    'https://fonts.gstatic.com',
+]
 CSP_REPORT_ONLY = config('CSP_REPORT_ONLY', default='false', parser=bool)
 CSP_REPORT_ENABLE = config('CSP_REPORT_ENABLE', default='false', parser=bool)
 if CSP_REPORT_ENABLE:
@@ -1433,7 +1440,9 @@ if CSP_EXTRA_FRAME_SRC:
     CSP_CHILD_SRC += tuple(CSP_EXTRA_FRAME_SRC)
 
 # support older browsers (mainly Safari)
-CSP_FRAME_SRC = CSP_CHILD_SRC
+CSP_FRAME_SRC = CSP_CHILD_SRC + [
+    'https://optimize.google.com',
+]
 
 # Bug 1331069 - Double Click tracking pixel for download page.
 AVAILABLE_TRACKING_PIXELS = {
