@@ -1427,7 +1427,7 @@ CSP_CONNECT_SRC = CSP_DEFAULT_SRC + [
     FXA_ENDPOINT,
     FXA_ENDPOINT_MOZILLAONLINE,
 ]
-CSP_FONT_SRC = [
+CSP_FONT_SRC = CSP_DEFAULT_SRC + [
     'https://fonts.gstatic.com',
 ]
 CSP_REPORT_ONLY = config('CSP_REPORT_ONLY', default='false', parser=bool)
