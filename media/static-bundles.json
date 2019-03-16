@@ -747,6 +747,13 @@
     },
     {
       "files": [
+        "css/firefox/desktop.scss",
+        "css/base/mozilla-lazy-image.scss"
+      ],
+      "name": "firefox-desktop"
+    },
+    {
+      "files": [
         "css/firefox/whatsnew/whatsnew-57-letter.scss"
       ],
       "name": "firefox-whatsnew-57-letter"
